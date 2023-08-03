@@ -17,3 +17,5 @@ class CustomMiddleware(MiddlewareMixin):
                 endpoint=request.get_full_path, method=request.method, user=user
             ).inc()
         last_user_activity_time.labels(user=user).set(now().timestamp())
+
+
